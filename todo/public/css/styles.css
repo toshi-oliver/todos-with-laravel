@@ -1,7 +1,7 @@
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.\3 css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/bootflat/2.0.4/css/bootflat.min.css');
 
-body{
+body {
     background-color: #f4f7f8;
 }
 
@@ -32,6 +32,7 @@ body{
 a.my-navbar-item:hover {
     color: #ffffff;
 }
+
 .table td:nth-child(2),
 .table td:nth-child(3),
 .table td:nth-child(4) {
