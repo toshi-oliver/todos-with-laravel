@@ -2,12 +2,12 @@
 
 namespace App\Http\Requests;
 
-use App\Models\MTask;
+use App\Models\Task;
 use Illuminate\Validation\Rule;
 
 class EditTask extends CreateTask
 {
-    public function rules()
+    public function rules(): array
     {
         $rule = parent::rules();
 
@@ -18,7 +18,7 @@ class EditTask extends CreateTask
             ];
     }
 
-    public function attributes()
+    public function attributes(): array
     {
         $attributes = parent::attributes();
 
@@ -27,7 +27,7 @@ class EditTask extends CreateTask
             ];
     }
 
-    public function messages()
+    public function messages(): array
     {
         $messages = parent::messages();
 
