@@ -13,6 +13,13 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function folders()
+        {
+         return $this->hasMany('App\Folder');
+        }
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
