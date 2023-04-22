@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Mail\ResetPassword;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Mail;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -17,8 +18,19 @@ class User extends Authenticatable
      */
     public function folders()
         {
-         return $this->hasMany('App\Folder');
+         return $this->hasMany('App\Models\Folder');
         }
+
+    /**
+     * ★ パスワード再設定メールを送信する
+     * @param $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+    Mail::to($this)->send(new ResetPassword($token));
+    }
+
     /**
      * The attributes that are mass assignable.
      *
